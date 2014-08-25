@@ -13,7 +13,7 @@ packages :
   - bzr
 script : |
   echo 'We started!'
-  sudo apt-add-repository ppa:hansjorg/rust
+  echo -ne '\n' | sudo apt-add-repository ppa:hansjorg/rust
   sudo apt-get update
   sudo apt-get install rust-nightly
   rustc --version
