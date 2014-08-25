@@ -25,6 +25,7 @@ script : |
   
   echo "Running Rust installer"
   sudo ./install.sh
+  sudo tee -a /etc/profile
   cd ..
   rm ${filename}.tar.gz
   echo "Completed!"
