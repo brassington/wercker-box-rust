@@ -1,0 +1,30 @@
+name: rust-latest
+version: 1.0.0
+inherits: wercker/ubuntu12.04-webessentials@1.0.0
+type : main
+platform : ubuntu@12.04
+description : Wercker box using the latest version of Rust.
+keywords:
+  - rust
+  - rustlang
+packages :
+  - git
+  - mercurial
+  - bzr
+script : |
+  echo "We started!"
+  
+  filename="rust-nightly-x86_64-unknown-linux-gnu"
+  
+  sudo apt-get update
+  sudo apt-get install bzr
+  sudo apt-get install mercurial
+  wget https://static.rust-lang.org/dist/${filename}.tar.gz
+  sudo tar -xf ${filename}.tar.gz
+  cd ${filename}
+  
+  echo "Running installer"
+  sudo ./install.sh
+  cd ..
+  rm ${filename}
+  echo "Completed!"
