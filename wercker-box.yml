@@ -12,9 +12,9 @@ packages :
   - mercurial
   - bzr
 script : |
-  echo "We started!"
+  echo 'We started!'
   
-  filename="rust-nightly-x86_64-unknown-linux-gnu"
+  filename='rust-nightly-x86_64-unknown-linux-gnu'
   
   sudo apt-get update
   sudo apt-get install bzr
@@ -22,10 +22,12 @@ script : |
   wget http://static.rust-lang.org/dist/${filename}.tar.gz
   sudo tar -xf ${filename}.tar.gz
   cd ${filename}
-  
-  echo "Running Rust installer"
-  sudo ./install.sh
-  sudo tee -a /etc/profile
+  curl -O http://s3.amazonaws.com/rust-builds/rust-support.tar.gz
+  tar xzvf rust-support.tar.gz
+  export LD_LIBRARY_PATH=~/lib
+  export PATH=~/rust-nightly-x86_64-unknown-linux-gnu/bin:$PATH
+  echo 'export PATH=~/rust-nightly-x86_64-unknown-linux-gnu/bin:$PATH' | sudo tee -a /etc/profile
+  echo 'export LD_LIBRARY_PATH=~/lib' | sudo tee -a /etc/profile
   cd ..
   rm ${filename}.tar.gz
   echo "Completed!"
