@@ -21,11 +21,11 @@ script : |
   sudo apt-get install mercurial
   wget http://static.rust-lang.org/dist/${filename}.tar.gz
   sudo tar -xf ${filename}.tar.gz
-  cd ${filename}
-  wget http://s3.amazonaws.com/rust-builds/rust-support.tar.gz
+  sudo cd ${filename}
+  sudo wget http://s3.amazonaws.com/rust-builds/rust-support.tar.gz
   sudo tar xzvf rust-support.tar.gz
-  export LD_LIBRARY_PATH=~/lib
-  export PATH=~/rust-nightly-x86_64-unknown-linux-gnu/bin:$PATH
+  sudo export LD_LIBRARY_PATH=~/lib
+  sudo export PATH=~/rust-nightly-x86_64-unknown-linux-gnu/bin:$PATH
   echo 'export PATH=~/rust-nightly-x86_64-unknown-linux-gnu/bin:$PATH' | sudo tee -a /etc/profile
   echo 'export LD_LIBRARY_PATH=~/lib' | sudo tee -a /etc/profile
   cd ..
