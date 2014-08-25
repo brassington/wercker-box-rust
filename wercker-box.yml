@@ -21,7 +21,7 @@ script : |
   sudo apt-get install mercurial
   wget http://static.rust-lang.org/dist/${filename}.tar.gz
   sudo tar -xf ${filename}.tar.gz
-  sudo cd ${filename}
+  cd ${filename}
   sudo wget http://s3.amazonaws.com/rust-builds/rust-support.tar.gz
   sudo tar xzvf rust-support.tar.gz
   sudo export LD_LIBRARY_PATH=~/lib
