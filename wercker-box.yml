@@ -22,8 +22,8 @@ script : |
   wget http://static.rust-lang.org/dist/${filename}.tar.gz
   sudo tar -xf ${filename}.tar.gz
   cd ${filename}
-  curl -O http://s3.amazonaws.com/rust-builds/rust-support.tar.gz
-  tar xzvf rust-support.tar.gz
+  wget http://s3.amazonaws.com/rust-builds/rust-support.tar.gz
+  sudo tar xzvf rust-support.tar.gz
   export LD_LIBRARY_PATH=~/lib
   export PATH=~/rust-nightly-x86_64-unknown-linux-gnu/bin:$PATH
   echo 'export PATH=~/rust-nightly-x86_64-unknown-linux-gnu/bin:$PATH' | sudo tee -a /etc/profile
