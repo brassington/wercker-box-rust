@@ -13,21 +13,8 @@ packages :
   - bzr
 script : |
   echo 'We started!'
-  
-  filename='rust-nightly-x86_64-unknown-linux-gnu'
-  
+  sudo apt-add-repository ppa:hansjorg/rust
   sudo apt-get update
-  sudo apt-get install bzr
-  sudo apt-get install mercurial
-  wget http://static.rust-lang.org/dist/${filename}.tar.gz
-  sudo tar -xf ${filename}.tar.gz
-  cd ${filename}
-  sudo wget http://s3.amazonaws.com/rust-builds/rust-support.tar.gz
-  sudo tar xzvf rust-support.tar.gz
-  export LD_LIBRARY_PATH=~/lib
-  export PATH=~/rust-nightly-x86_64-unknown-linux-gnu/bin:$PATH
-  echo 'export PATH=~/rust-nightly-x86_64-unknown-linux-gnu/bin:$PATH' | sudo tee -a /etc/profile
-  echo 'export LD_LIBRARY_PATH=~/lib' | sudo tee -a /etc/profile
-  cd ..
-  rm ${filename}.tar.gz
-  echo "Completed!"
+  sudo apt-get install rust-nightly
+  rustc --version
+  echo 'Completed!'
