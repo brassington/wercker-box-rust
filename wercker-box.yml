@@ -23,8 +23,8 @@ script : |
   sudo tar -xf ${filename}.tar.gz
   cd ${filename}
   
-  echo "Running installer"
+  echo "Running Rust installer"
   sudo ./install.sh
   cd ..
-  rm ${filename}
+  rm ${filename}.tar.gz
   echo "Completed!"
