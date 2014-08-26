@@ -1,5 +1,5 @@
 name: rust-latest
-version: 1.0.2
+version: 1.0.3
 inherits: wercker/ubuntu12.04-webessentials@1.0.0
 type : main
 platform : ubuntu@12.04
@@ -17,4 +17,4 @@ script : |
   sudo apt-get update
   sudo apt-get install rust-nightly
   rustc --version
-  echo 'Completed!'
+  echo 'OK! Rust box ready to use'
