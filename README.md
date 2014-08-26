@@ -2,6 +2,7 @@ wercker-box-rust
 ================
 
 Wercker box using the latest version of Rust.
+
 [![wercker status](https://app.wercker.com/status/34a7dcae96d0a188cfedc819150a22ea/m "wercker status")](https://app.wercker.com/project/bykey/34a7dcae96d0a188cfedc819150a22ea)
 
 ### Usage
