@@ -1,5 +1,5 @@
-name: rust-latest
-version: 1.0.3
+name: rust-cargo
+version: 0.0.2
 inherits: wercker/ubuntu12.04-webessentials@1.0.0
 type : main
 platform : ubuntu@12.04
@@ -7,14 +7,14 @@ description : Wercker box using the latest version of Rust.
 keywords:
   - rust
   - rustlang
+  - cargo
 packages :
   - git
   - mercurial
-  - bzr
+  - bz
+  - curl
 script : |
   echo 'We started!'
-  echo -ne '\n' | sudo apt-add-repository ppa:hansjorg/rust
-  sudo apt-get update
-  sudo apt-get install rust-nightly
+  curl -s https://static.rust-lang.org/rustup.sh | sudo sh
   rustc --version
   echo 'OK! Rust box ready to use'
